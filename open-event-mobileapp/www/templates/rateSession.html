@@ -1,0 +1,50 @@
+<ion-view title="Rate Session">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <form class="list">
+            <div>
+                <p>
+                    <strong>Overall Rating</strong>
+                </p>
+            </div>
+            <ion-item class="range range-positive">
+                <input type="range" value="1" min="1" max="6" name="OverallRating">
+            </ion-item>
+            <div>
+                <p>
+                    <strong>Topic</strong>
+                </p>
+            </div>
+            <label class="item item-select" name="TopicRating">
+                <span class="input-label">Select</span>
+                <select>
+                    <option>Not interesting</option>
+                    <option>Somewhat interesting</option>
+                    <option>Interesting</option>
+                    <option>Very interesting</option>
+                </select>
+            </label>
+        </form>
+        <div>
+            <p>
+                <strong>Presenter</strong>
+            </p>
+        </div>
+        <form class="list">
+            <label class="item item-select">
+                <span class="input-label">Select</span>
+                <select>
+                    <option>Poor presentation</option>
+                    <option>OK presentation</option>
+                    <option>Epic presentation</option>
+                </select>
+            </label>
+            <div>
+                <p>
+                    <strong>Feedback</strong>
+                </p>
+            </div>
+            <ion-checkbox name="NameInFeedback">Give my name</ion-checkbox>
+        </form>
+        <button id="rateSession-button23" class="button button-positive  button-block">Send Feedback</button>
+    </ion-content>
+</ion-view>
