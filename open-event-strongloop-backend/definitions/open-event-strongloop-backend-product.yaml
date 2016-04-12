@@ -1,0 +1,25 @@
+product: '1.0.0'
+
+info:
+  name: open-event-strongloop-backend
+  title: open-event-strongloop-backend
+  version: 1.0.0
+
+apis:
+  'open-event-strongloop-backend':
+    $ref: open-event-strongloop-backend.yaml
+
+visibility:
+  view:
+    type: public
+  subscribe:
+    type: authenticated
+
+plans:
+  default:
+    title: Default Plan
+    description: Default Plan
+    approval: false
+    rate-limit:
+      value: 100/hour
+      hard-limit: false

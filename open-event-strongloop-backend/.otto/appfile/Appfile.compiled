@@ -1,0 +1,69 @@
+{
+    "File": {
+        "ID": "aeebdc2b-d580-95fe-8707-bf653f5ec4bf",
+        "Path": "C:\\Users\\svenk\\git\\open-event\\open-event-strongloop-backend\\Appfile",
+        "Source": "",
+        "Application": {
+            "Name": "open-event-strongloop-backend",
+            "Type": "node",
+            "Detect": true,
+            "Dependencies": null
+        },
+        "Project": {
+            "Name": "open-event-strongloop-backend",
+            "Infrastructure": "open-event-strongloop-backend"
+        },
+        "Infrastructure": [
+            {
+                "Name": "open-event-strongloop-backend",
+                "Type": "aws",
+                "Flavor": "simple",
+                "Foundations": [
+                    {
+                        "Name": "consul",
+                        "Config": null
+                    }
+                ]
+            }
+        ],
+        "Customization": null,
+        "Imports": null
+    },
+    "Vertices": [
+        {
+            "File": {
+                "ID": "aeebdc2b-d580-95fe-8707-bf653f5ec4bf",
+                "Path": "C:\\Users\\svenk\\git\\open-event\\open-event-strongloop-backend\\Appfile",
+                "Source": "",
+                "Application": {
+                    "Name": "open-event-strongloop-backend",
+                    "Type": "node",
+                    "Detect": true,
+                    "Dependencies": null
+                },
+                "Project": {
+                    "Name": "open-event-strongloop-backend",
+                    "Infrastructure": "open-event-strongloop-backend"
+                },
+                "Infrastructure": [
+                    {
+                        "Name": "open-event-strongloop-backend",
+                        "Type": "aws",
+                        "Flavor": "simple",
+                        "Foundations": [
+                            {
+                                "Name": "consul",
+                                "Config": null
+                            }
+                        ]
+                    }
+                ],
+                "Customization": null,
+                "Imports": null
+            },
+            "Dir": "",
+            "NameValue": "open-event-strongloop-backend"
+        }
+    ],
+    "Edges": []
+}

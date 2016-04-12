@@ -1,0 +1,34 @@
+{
+  "name": "session",
+  "plural": "sessions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "session-id": {
+      "type": "number",
+      "id": true,
+      "required": true,
+      "index": true
+    },
+    "title": {
+      "type": "string",
+      "required": false,
+      "index": false
+    },
+    "presenter": {
+      "type": "string",
+      "required": false
+    },
+    "summary": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

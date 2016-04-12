@@ -1,0 +1,333 @@
+paths:
+  /sessions:
+    post:
+      tags:
+        - session
+      summary: Create a new instance of the model and persist it into the data source.
+      operationId: session.create
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/session'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/session'
+      deprecated: false
+    put:
+      tags:
+        - session
+      summary: Update an existing model instance or insert a new one into the data source.
+      operationId: session.upsert
+      parameters:
+        - name: data
+          in: body
+          description: Model instance data
+          required: false
+          schema:
+            $ref: '#/definitions/session'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/session'
+      deprecated: false
+    get:
+      tags:
+        - session
+      summary: Find all instances of the model matched by filter from the data source.
+      operationId: session.find
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/session'
+      deprecated: false
+  '/sessions/{id}/exists':
+    get:
+      tags:
+        - session
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'session.exists__get_sessions_{id}_exists'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            required: []
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+  '/sessions/{id}':
+    head:
+      tags:
+        - session
+      summary: Check whether a model instance exists in the data source.
+      operationId: 'session.exists__head_sessions_{id}'
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            required: []
+            properties:
+              exists:
+                type: boolean
+      deprecated: false
+    get:
+      tags:
+        - session
+      summary: Find a model instance by id from the data source.
+      operationId: session.findById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+        - name: filter
+          in: query
+          description: Filter defining fields and include
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/session'
+      deprecated: false
+    delete:
+      tags:
+        - session
+      summary: Delete a model instance by id from the data source.
+      operationId: session.deleteById
+      parameters:
+        - name: id
+          in: path
+          description: Model id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+      deprecated: false
+    put:
+      tags:
+        - session
+      summary: Update attributes for a model instance and persist it into the data source.
+      operationId: session.prototype.updateAttributes
+      parameters:
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/session'
+        - name: id
+          in: path
+          description: PersistedModel id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/session'
+      deprecated: false
+  /sessions/findOne:
+    get:
+      tags:
+        - session
+      summary: Find first instance of the model matched by filter from the data source.
+      operationId: session.findOne
+      parameters:
+        - name: filter
+          in: query
+          description: 'Filter defining fields, where, include, order, offset, and limit'
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/session'
+      deprecated: false
+  /sessions/update:
+    post:
+      tags:
+        - session
+      summary: Update instances of the model matched by where from the data source.
+      operationId: session.updateAll
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          description: An object of model property name/value pairs
+          required: false
+          schema:
+            $ref: '#/definitions/session'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            description: The number of instances updated
+            type: object
+      deprecated: false
+  /sessions/count:
+    get:
+      tags:
+        - session
+      summary: Count instances of the model matched by where from the data source.
+      operationId: session.count
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            required: []
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  /sessions/change-stream:
+    post:
+      tags:
+        - session
+      summary: Create a change stream.
+      operationId: session.createChangeStream__post_sessions_change-stream
+      parameters:
+        - name: options
+          in: formData
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+    get:
+      tags:
+        - session
+      summary: Create a change stream.
+      operationId: session.createChangeStream__get_sessions_change-stream
+      parameters:
+        - name: options
+          in: query
+          required: false
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: file
+      deprecated: false
+definitions:
+  session:
+    properties:
+      session-id:
+        type: number
+        format: double
+      title:
+        type: string
+      presenter:
+        type: string
+      summary:
+        type: string
+    required:
+      - session-id
+    additionalProperties: false
+  x-any:
+    properties: {}
+swagger: '2.0'
+info:
+  x-ibm-name: open-event-strongloop-backend
+  version: 1.0.0
+  title: open-event-strongloop-backend
+schemes:
+  - https
+host: $(catalog.host)
+basePath: /api
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  clientIdHeader:
+    type: apiKey
+    in: header
+    name: X-IBM-Client-Id
+  clientSecretHeader:
+    in: header
+    name: X-IBM-Client-Secret
+    type: apiKey
+security:
+  - clientIdHeader: []
+    clientSecretHeader: []
+x-ibm-configuration:
+  testable: true
+  enforced: true
+  cors:
+    enabled: true
+  gateway: micro-gateway
+  catalogs:
+    apic-dev:
+      properties:
+        runtime-url: $(TARGET_URL)
+    sb:
+      properties:
+        runtime-url: 'http://localhost:4001'
+  assembly:
+    execute:
+      - invoke:
+          target-url: $(runtime-url)$(request.path)$(request.search)
